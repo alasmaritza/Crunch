@@ -6,6 +6,32 @@
     <link rel="icon" href="Content/crunch-gyms-splash1.png" type="image/x-icon" />
     <link rel="stylesheet" href="Scripts/bootstrap.min.css" />
     <link rel="stylesheet" href="Scripts/Style.css" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+<script>
+$(document).ready(function(){
+var header = $('body');
+
+var backgrounds = new Array(
+    'url(Content/Image1.jpg)'
+  , 'url(Content/lungefront_Crunch2.jpg)'
+  , 'url(Content/miles-of-cardio.jpg)'
+  , 'url(Content/StrengthMachines.jpg)'
+);
+
+var current = 0;
+
+function nextBackground() {
+    current++;
+    current = current % backgrounds.length;
+    header.css('background-image', backgrounds[current]);
+}
+setInterval(nextBackground, 2000);
+
+header.css('background-image', backgrounds[0]);
+});
+
+</script>
 
 </head>
 
