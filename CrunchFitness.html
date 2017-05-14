@@ -6,38 +6,74 @@
     <link rel="icon" href="Content/crunch-gyms-splash1.png" type="image/x-icon" />
     <link rel="stylesheet" href="Scripts/bootstrap.min.css" />
     <link rel="stylesheet" href="Scripts/Style.css" />
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    
-<script>
-$(document).ready(function(){
-var header = $('body');
-
-var backgrounds = new Array(
-    'url(Content/Image1.jpg)'
-  , 'url(Content/lungefront_Crunch2.jpg)'
-  , 'url(Content/miles-of-cardio.jpg)'
-  , 'url(Content/StrengthMachines.jpg)'
-);
-
-var current = 0;
-
-function nextBackground() {
-    current++;
-    current = current % backgrounds.length;
-    header.css('background-image', backgrounds[current]);
-}
-setInterval(nextBackground, 2000);
-
-header.css('background-image', backgrounds[0]);
-});
-
-</script>
 
 </head>
 
 <body>
 
+    <div>
+        <img src="Content/party.png" class="party" />
+    </div>
+
+    <div class="container form hidden">
+        <h1>SIGN UP TODAY AND GET A FREE 3-DAY PASS</h1>
+        <form class="col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" class="form-control" name="firstName" />
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" class="form-control" name="lastName" />
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" class="form-control" name="email" />
+            </div>
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="text" class="form-control" name="phoneNumber" />
+            </div>
+            <div>
+                <label>Location:</label>
+                <br>
+                <select>
+                <option>Northridge, CA</option>
+                <option>Simi Valley, CA</option>
+                <option>Van Nuys, CA</option>
+            </select>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
     <script type="text/javasript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var header = $('body');
+
+            var backgrounds = new Array(
+                'url(Content/Image1.jpg)', 'url(Content/lungefront_Crunch2.jpg)',
+                'url(Content/miles-of-cardio.jpg)', 'url(Content/StrengthMachines.jpg)', 'url(Content/camp_crunch-mx.jpg)'
+            );
+
+            var current = 0;
+
+            function nextBackground() {
+                current++;
+                current = current % backgrounds.length;
+                header.css('background-image', backgrounds[current]);
+            }
+            setInterval(nextBackground, 2000);
+            header.css('background-image', backgrounds[0]);
+
+            $(".party").click(function () {
+                $(".party").slideUp();
+                $(".form").slideDown().removeClass("hidden");
+            })
+        });
+    </script>
 </body>
 
 </html>
